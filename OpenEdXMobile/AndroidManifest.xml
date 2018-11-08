@@ -267,7 +267,7 @@
 
         <!-- Setup Facebook -->
         <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="${facebookAppId}"/>
+            android:value="@string/facebook_application_id"/>
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"

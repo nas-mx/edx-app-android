@@ -4,6 +4,9 @@
     <string name="app_shortcut_name" translatable="false">@string/shortcut_name</string>
     <string name="phonetic_app_name" translatable="false">@string/phonetic_platform_name</string>
 
+
+    <string name="facebook_application_id" translatable="false">437114646736736</string>
+
     <!-- Certificates -->
 
     <!-- Label congratulation user on finishing course -->

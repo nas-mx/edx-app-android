@@ -56,9 +56,11 @@ public interface RetrofitProvider extends Provider<Retrofit> {
         private synchronized Retrofit get(final int index, @NonNull final OkHttpClient client) {
             Retrofit retrofit = retrofits[index];
             if (retrofit == null) {
+                String hostURL = config.getApiHostURL();
+                System.out.print(hostURL);
                 retrofit = new Retrofit.Builder()
                         .client(client)
-                        .baseUrl(config.getApiHostURL())
+                        .baseUrl(hostURL)
                         .addConverterFactory(GsonConverterFactory.create(gson))
                         .build();
                 retrofits[index] = retrofit;

@@ -1,5 +1,6 @@
-API_HOST_URL: 'http://10.0.2.2:8000' # localhost is 10.0.2.2 in Android
-ENVIRONMENT_DISPLAY_NAME: 'Localhost'
-PLATFORM_NAME: 'Your platform name here'
-PLATFORM_DESTINATION_NAME: 'example.com'
-FEEDBACK_EMAIL_ADDRESS: 'support@example.com'
+API_HOST_URL: 'https://edxunani.demasys.net' # localhost is 10.0.2.2 in Android
+ENVIRONMENT_DISPLAY_NAME: 'Unani host'
+PLATFORM_NAME: 'Unani'
+OAUTH_CLIENT_ID: 'c68414712d99f0bed0d5'
+PLATFORM_DESTINATION_NAME: 'exampleparaelperro.com'
+FEEDBACK_EMAIL_ADDRESS: 'ovaleriano@nasolutions.mx'

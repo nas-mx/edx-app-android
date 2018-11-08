@@ -6,7 +6,6 @@ allprojects {
     }
     project.apply from: "${rootDir}/constants.gradle"
 }
-
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     project.apply from: "${rootDir}/constants.gradle"
@@ -16,11 +15,10 @@ buildscript {
         mavenCentral()  //  This is the Maven Central repo
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:${GRADLE_PLUGIN_VERSION}"
+        classpath "com.android.tools.build:gradle:3.2.1"
         classpath 'com.google.gms:google-services:4.0.1'
     }
 }
-
 // task that creates 'artifacts' directory
 task createBuildArtifactsDirectory << { task ->
     def hashPipe = new ByteArrayOutputStream()
@@ -34,7 +32,6 @@ task createBuildArtifactsDirectory << { task ->
         commandLine = ['mkdir', '-p', destDir]
     }
 }
-
 // Copies unit test reports to the 'artifacts' directory
 task copyUnitTestBuildArtifacts << { task ->
     // copy unit test reports
@@ -44,7 +41,6 @@ task copyUnitTestBuildArtifacts << { task ->
     }
 }
 copyUnitTestBuildArtifacts.dependsOn createBuildArtifactsDirectory
-
 // Copies lint report to the 'artifacts' directory
 task copyLintBuildArtifacts(type: Copy) {
     from 'OpenEdXMobile/build/outputs'
@@ -53,7 +49,6 @@ task copyLintBuildArtifacts(type: Copy) {
     include 'lint-results*/**'
 }
 copyLintBuildArtifacts.dependsOn createBuildArtifactsDirectory
-
 // Copies acceptance test reports to the 'artifacts' directory
 task copyAcceptanceTestBuildArtifacts << { task ->
     // copy acceptance test reports
@@ -63,13 +58,10 @@ task copyAcceptanceTestBuildArtifacts << { task ->
     }
 }
 copyAcceptanceTestBuildArtifacts.dependsOn createBuildArtifactsDirectory
-
-
 // Disables preDex which reduces the amount of memory required to build an APK. This is important
 // for CI where there is a memory limit. PreDex is also not useful in CI where a new build is
 // desired on every run.
 project.ext.preDexLibs = !project.hasProperty('disablePreDex')
-
 subprojects {
     project.plugins.whenPluginAdded { plugin ->
         if ("com.android.build.gradle.AppPlugin".equals(plugin.class.name)) {
@@ -79,7 +71,8 @@ subprojects {
         }
     }
 }
-
 // Increases adb timeout for installing an apk. This tweak is need for slow adb installs on an
 // emulator for CI.
 com.android.ddmlib.DdmPreferences.setTimeOut(600000)
+dependencies {
+}
