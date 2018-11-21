@@ -620,7 +620,7 @@ public class Config {
     }
 
     public boolean isUsingVideoPipeline() {
-        return getBoolean(USING_VIDEO_PIPELINE, true);
+        return getBoolean(USING_VIDEO_PIPELINE, false);
     }
 
     public boolean isCourseDatesEnabled() {
