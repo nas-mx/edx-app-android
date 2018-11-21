@@ -1,0 +1,7 @@
+ 
+PLATFORM_NAME: 'Unani_Centros'
+PLATFORM_DESTINATION_NAME: 'ovaleriano@nasolutions.mxs'
+OAUTH_CLIENT_ID: 'c68414712d99f0bed0d5'
+API_HOST_URL: 'https://edxunani.demasys.net' # localhost is 10.0.2.2 in Android
+FEEDBACK_EMAIL_ADDRESS: 'ovaleriano@nasolutions.mxs'
+ENVIRONMENT_DISPLAY_NAME: 'unani'
