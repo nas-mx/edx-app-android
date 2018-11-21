@@ -41,7 +41,6 @@
         <activity
             android:name="org.edx.mobile.view.SplashActivity"
             android:label="@string/app_shortcut_name"
-            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,19 +58,16 @@
         <activity
             android:name="org.edx.mobile.view.LaunchActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launch" />
 
         <activity
             android:name="org.edx.mobile.view.DiscoveryLaunchActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name="org.edx.mobile.view.LoginActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
@@ -87,7 +83,6 @@
         <activity
             android:name="org.edx.mobile.view.AccountActivity"
             android:label="@string/title_account"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
         <activity
@@ -152,7 +147,6 @@
         <activity
             android:name=".view.WebViewFindCoursesActivity"
             android:label="@string/label_discover"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
         <activity
@@ -163,13 +157,11 @@
         <activity
             android:name="org.edx.mobile.view.CourseInfoActivity"
             android:label="@string/label_discover"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
         <activity
             android:name="org.edx.mobile.view.CourseDetailActivity"
             android:label="@string/label_find_courses"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
         <activity
@@ -180,7 +172,6 @@
         <activity
             android:name=".view.NativeFindCoursesActivity"
             android:label="@string/label_find_courses"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
         <activity
@@ -197,36 +188,30 @@
         <activity
             android:name="org.edx.mobile.view.SettingsActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
         <activity
             android:name=".profiles.UserProfileActivity"
             android:label="@string/profile_title"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
         <activity
             android:name=".view.EditUserProfileActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar" />
 
         <activity
             android:name=".view.FormFieldActivity"
             android:label=""
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name=".view.CropImageActivity"
             android:label=""
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".whatsnew.WhatsNewActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
@@ -236,7 +221,6 @@
 
         <activity
             android:name=".view.dialog.WebViewActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

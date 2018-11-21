@@ -28,13 +28,7 @@ public class LaunchActivity extends BaseFragmentActivity {
                 startActivity(environment.getRouter().getLogInIntent());
             }
         });
-        binding.signUpBtn.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                environment.getAnalyticsRegistry().trackUserSignUpForAccount();
-                startActivity(environment.getRouter().getRegisterIntent());
-            }
-        });
+
         environment.getAnalyticsRegistry().trackScreenView(Analytics.Screens.LAUNCH_ACTIVITY);
     }
 
