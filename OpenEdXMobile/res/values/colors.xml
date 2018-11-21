@@ -57,11 +57,11 @@
     <color name="edx_brand_primary_back">#cba380</color>
     <color name="edx_brand_primary_x_back">#e9d8c9</color>
 
-    <color name="edx_brand_secondary_dark">#3d4125</color>
-    <color name="edx_brand_secondary_base">#6a7141</color>
-    <color name="edx_brand_secondary_accent">#98a25d</color>
-    <color name="edx_brand_secondary_back">#c0c79e</color>
-    <color name="edx_brand_secondary_x_back">#eaecdf</color>
+    <color name="edx_brand_secondary_dark">#1c3027</color>
+    <color name="edx_brand_secondary_base">#2f5040</color>
+    <color name="edx_brand_secondary_accent">#42705a</color>
+    <color name="edx_brand_secondary_back">#6eaa8d</color>
+    <color name="edx_brand_secondary_x_back">#afd0c0</color>
 
     <color name="edx_brand_gray_dark">#111111</color>
     <color name="edx_brand_gray_base">#414141</color>
