@@ -112,54 +112,59 @@ task(version) << {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: '*.jar')
+    implementation fileTree(include: '*.jar', dir: 'libs')
+    implementation project(':android-iconify')
 
-    implementation project (':android-iconify')
     // Note that we have the Font Awesome TTF file
-    // in the local assets as well, to enable the
-    // graphical layout editor to render it. Since
-    // that is what will be compiled in the APK now,
-    // we need to ensure that it's updated along
-    // with module updates.
-    implementation project (':android-iconify-fontawesome')
 
+    // in the local assets as well, to enable the
+
+    // graphical layout editor to render it. Since
+
+    // that is what will be compiled in the APK now,
+
+    // we need to ensure that it's updated along
+
+    // with module updates.
+    implementation project(':android-iconify-fontawesome')
     implementation "com.android.support:appcompat-v7:${SUPPORT_LIBRARY_VERSION}"
     implementation "com.android.support:recyclerview-v7:${SUPPORT_LIBRARY_VERSION}"
     implementation "com.android.support:cardview-v7:${SUPPORT_LIBRARY_VERSION}"
     implementation "com.android.support:design:${SUPPORT_LIBRARY_VERSION}"
+
     // For the optional Nullable annotation
     implementation "com.android.support:support-annotations:${SUPPORT_LIBRARY_VERSION}"
+    implementation 'com.google.android.gms:play-services-plus:15.0.1'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.1'
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
 
-    implementation "com.google.android.gms:play-services-plus:15.0.1"
-    implementation "com.google.android.gms:play-services-analytics:16.0.1"
-    implementation "com.google.android.gms:play-services-auth:15.0.1"
-    implementation "com.google.android.gms:play-services-ads:15.0.1"
     // Google Firebase
-    implementation "com.google.firebase:firebase-core:16.0.1"
-    implementation "com.google.firebase:firebase-messaging:17.1.0"
-
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-messaging:17.1.0'
     implementation 'com.facebook.android:facebook-login:4.36.0'
     implementation 'com.google.code.gson:gson:2.7'
     implementation 'de.greenrobot:eventbus:2.4.1'
     implementation 'com.squareup.phrase:phrase:1.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.0.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+
     /* Exclude dependencies defined statically at the top-
-     * level, to prevent them from being resolved to the
-     * latest version as a result of dynamic version
-     * definitions in the transitive dependencies.
-     */
-    implementation ('com.squareup.retrofit2:retrofit:2.1.0') {
+                         * level, to prevent them from being resolved to the
+                         * latest version as a result of dynamic version
+                         * definitions in the transitive dependencies.
+                         */
+    implementation('com.squareup.retrofit2:retrofit:2.1.0') {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
-    implementation ('com.squareup.retrofit2:converter-gson:2.1.0') {
+    implementation('com.squareup.retrofit2:converter-gson:2.1.0') {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
         exclude group: 'com.google.code.gson', module: 'gson'
     }
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation ('com.github.bumptech.glide:okhttp3-integration:1.4.0'){
+    implementation('com.github.bumptech.glide:okhttp3-integration:1.4.0') {
         exclude group: 'glide-parent'
     }
     implementation 'de.hdodenhof:circleimageview:2.0.0'
@@ -167,7 +172,6 @@ dependencies {
 
     // Segment Library
     implementation 'com.segment.analytics.android:analytics:4.2.6'
-
     implementation('com.segment.analytics.android.integrations:google-analytics:1.0.0') {
         exclude module: 'play-services-analytics'
         transitive = true
@@ -179,9 +183,11 @@ dependencies {
     }
 
     // Branch SDK
+
     // Check this link for guide to updating Branch integration:
+
     // https://github.com/BranchMetrics/android-branch-deep-linking
-    implementation ('io.branch.sdk.android:library:2.19.2') {
+    implementation('io.branch.sdk.android:library:2.19.2') {
         exclude module: 'answers-shim'
     }
 
@@ -194,28 +200,27 @@ dependencies {
 
     // test project configuration
     testImplementation 'junit:junit:4.12'
-    testImplementation ("org.mockito:mockito-core:1.10.19"){
+    testImplementation('org.mockito:mockito-core:1.10.19') {
         exclude group: 'org.hamcrest'
     }
     testImplementation 'commons-lang:commons-lang:2.6'
-    testImplementation "org.robolectric:robolectric:3.8"
-    testImplementation "org.robolectric:shadows-supportv4:3.8"
-    testImplementation "org.robolectric:shadows-multidex:3.8"
+    testImplementation 'org.robolectric:robolectric:3.8'
+    testImplementation 'org.robolectric:shadows-supportv4:3.8'
+    testImplementation 'org.robolectric:shadows-multidex:3.8'
     testImplementation 'org.assertj:assertj-core:2.5.0'
-    testImplementation ('com.squareup.assertj:assertj-android:1.1.1') {
+    testImplementation('com.squareup.assertj:assertj-android:1.1.1') {
         exclude group: 'com.android.support'
     }
-    testImplementation ('com.squareup.assertj:assertj-android-support-v4:1.1.1') {
+    testImplementation('com.squareup.assertj:assertj-android-support-v4:1.1.1') {
         exclude group: 'com.android.support'
     }
-    testImplementation ('com.squareup.assertj:assertj-android-appcompat-v7:1.1.1') {
+    testImplementation('com.squareup.assertj:assertj-android-appcompat-v7:1.1.1') {
         exclude group: 'com.android.support'
     }
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.0.1'
-    testImplementation ('com.squareup.retrofit2:retrofit-mock:2.1.0') {
+    testImplementation('com.squareup.retrofit2:retrofit-mock:2.1.0') {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
     }
-
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test:rules:1.0.1'
     androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
@@ -223,7 +228,7 @@ dependencies {
     androidTestImplementation 'com.crittercism.dexmaker:dexmaker:1.4'
     androidTestImplementation 'com.crittercism.dexmaker:dexmaker-dx:1.4'
     androidTestImplementation 'com.crittercism.dexmaker:dexmaker-mockito:1.4'
-    androidTestImplementation ('org.mockito:mockito-core:1.10.19'){
+    androidTestImplementation('org.mockito:mockito-core:1.10.19') {
         exclude group: 'org.hamcrest'
     }
 }
@@ -264,22 +269,16 @@ android {
     flavorDimensions "default"
 
     defaultConfig {
-        applicationId "org.edx.mobile"
+        applicationId 'ord.edx.unani.org'
         // minimum version is Android 4.1
         minSdkVersion MIN_SDK_VERSION
         targetSdkVersion TARGET_SDK_VERSION
-
-        versionCode getVersionCode()
         versionName getVersionName()
-
         renderscriptTargetApi 22
         renderscriptSupportModeEnabled true
-
         vectorDrawables.useSupportLibrary = true
-
         // test configuration
         testApplicationId 'org.edx.mobile.test'
-
         for (task in project.gradle.startParameter.taskNames) {
             if (task.contains("ScreenshotTest")) {
                 Map<String, String> map = new HashMap<String, String>();
@@ -287,31 +286,24 @@ android {
                 setTestInstrumentationRunnerArguments map
             }
         }
-
         testInstrumentationRunner "org.edx.mobile.test.EdXTestRunner"
-
         testHandleProfiling true
         testFunctionalTest true
         testBuildType "debuggable"
-
         // Enabling multidex support.
         multiDexEnabled true
-
         def platformName = config.get('PLATFORM_NAME')
         resValue "string", "platform_name", platformName
-
         def appShortcutName = config.get('APP_SHORTCUT_NAME')
         if (appShortcutName == null) {
             appShortcutName = platformName
         }
         resValue "string", "shortcut_name", appShortcutName
-
         def phoneticPlatformName = config.get('PHONETIC_PLATFORM_NAME')
         if (phoneticPlatformName == null) {
             phoneticPlatformName = platformName
         }
         resValue "string", "phonetic_platform_name", phoneticPlatformName
-
         def fabric = config.get('FABRIC')
         if (fabric?.get('ENABLED')) {
             def fabric_key = fabric?.get('FABRIC_KEY')
@@ -335,7 +327,6 @@ android {
                 }
             }
         }
-
         def facebookAppId = ""
         def fbLoginProtocolScheme = ""
         def facebook = config.get('FACEBOOK')
@@ -344,15 +335,13 @@ android {
             if (null == facebookAppId) {
                 throw new GradleException("You must set FACEBOOK_APP_ID if FACEBOOK is enabled")
             }
-            fbLoginProtocolScheme = "fb"+facebookAppId
+            fbLoginProtocolScheme = "fb" + facebookAppId
         }
-
-        manifestPlaceholders = [supportsRtl:"false",
-                                firebaseEnabled: firebaseEnabled?: false,
-                                branchKey: branchKey,
-                                facebookAppId: facebookAppId,
+        manifestPlaceholders = [supportsRtl          : "false",
+                                firebaseEnabled      : firebaseEnabled ?: false,
+                                branchKey            : branchKey,
+                                facebookAppId        : facebookAppId,
                                 fbLoginProtocolScheme: fbLoginProtocolScheme]
-
         javaCompileOptions {
             annotationProcessorOptions {
                 includeCompileClasspath false
@@ -415,6 +404,10 @@ android {
             if (project.hasProperty('APPLICATION_ID')) {
                 applicationId APPLICATION_ID
             }
+            applicationId 'ord.edx.unani.org'
+            versionName 'NasInit'
+            versionNameSuffix 'NasInit'
+            versionCode 2
         }
     }
 
